@@ -48,7 +48,7 @@ let quizData = [];
 let userAnswers = [];
 let currentQuestion = 0;
 let score = 0;
-let timeLeft = 15;
+let timeLeft = 30;
 let timer;
 let currentSubject = '';
 let currentTheme = {};
@@ -156,7 +156,7 @@ function applyTheme() {
 // Start timer for each question
 function startTimer() {
     clearInterval(timer);
-    timeLeft = 15;
+    timeLeft = 30;
     timerDisplay.textContent = `Time Left: ${timeLeft}s`;
     timerDisplay.classList.remove('text-red-500', 'timer-low');
     timer = setInterval(() => {
