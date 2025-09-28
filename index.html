@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Web App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex items-center justify-center transition-colors duration-300">
+    <div class="container mx-auto p-6 max-w-2xl w-full bg-white rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center mb-6 sm:text-2xl">🧠 Science Quiz App</h1>
+
+        <!-- Subject Selection -->
+        <div id="subject-selection" class="mb-6">
+            <h2 class="text-xl font-semibold mb-2 sm:text-lg">Select Subject</h2>
+            <select id="subject" class="w-full p-3 border rounded text-base sm:text-sm bg-gray-50 focus:ring-2 focus:ring-blue-500">
+                <option value="">Select a subject</option>
+                <option value="Physics">⚛️ Physics</option>
+                <option value="Chemistry">🧪 Chemistry</option>
+                <option value="Biology">🧬 Biology</option>
+            </select>
+        </div>
+
+        <!-- Topic Selection -->
+        <div id="topic-selection" class="mb-6 hidden">
+            <h2 class="text-xl font-semibold mb-2 sm:text-lg">Select Topic</h2>
+            <select id="topic" class="w-full p-3 border rounded text-base sm:text-sm bg-gray-50 focus:ring-2 focus:ring-blue-500">
+                <option value="">Select a topic</option>
+            </select>
+        </div>
+
+        <!-- Grade Level Selection -->
+        <div id="grade-selection" class="mb-6 hidden">
+            <h2 class="text-xl font-semibold mb-2 sm:text-lg">Select Grade Level</h2>
+            <select id="grade" class="w-full p-3 border rounded text-base sm:text-sm bg-gray-50 focus:ring-2 focus:ring-blue-500">
+                <option value="">Select a grade</option>
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+            </select>
+            <button id="start-quiz" class="mt-4 bg-blue-500 text-white p-3 rounded hover:bg-blue-600 w-full sm:text-sm transition-colors duration-200">Start Quiz</button>
+            <p class="alart text-sm text-gray-600 mt-2"></p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container" class="hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 id="quiz-title" class="text-xl font-semibold sm:text-lg"></h2>
+                <span id="timer" class="text-lg font-medium sm:text-sm text-gray-800"></span>
+            </div>
+            <div id="progress" class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+                <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-width duration-300"></div>
+            </div>
+            <div id="questions"></div>
+            <div class="flex space-x-4 mt-4">
+                <button id="skip-question" class="flex-1 bg-yellow-500 text-white p-3 rounded hover:bg-yellow-600 sm:text-sm transition-colors duration-200">Skip Question</button>
+                <button id="submit-answer" class="flex-1 bg-green-500 text-white p-3 rounded hover:bg-green-600 sm:text-sm transition-colors duration-200">Submit Answer</button>
+            </div>
+        </div>
+
+        <!-- Results Container -->
+        <div id="results" class="hidden">
+            <h2 class="text-xl font-semibold mb-4 sm:text-lg">Quiz Results</h2>
+            <p id="score" class="text-lg sm:text-base font-bold text-center mb-6"></p>
+            <button id="another-quiz" class="bg-blue-500 text-white p-3 rounded hover:bg-blue-600 w-full sm:text-sm transition-colors duration-200">Take Another Quiz</button>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
